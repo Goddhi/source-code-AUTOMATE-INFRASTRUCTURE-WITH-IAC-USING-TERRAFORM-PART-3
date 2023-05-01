@@ -1,0 +1,36 @@
+ 1, 2, 3, 4, 5, 6, 7, 8, 9, and 10
+
+
+443
+2
+20
+
+80
+
+....
+
+terraform apply -target=aws_vpc.main -auto-approve
+
+terraform apply -target=aws_subnet.public -auto-approve
+
+terraform apply -target=aws_subnet.private -auto-approve
+
+terraform plan
+
+terraform apply -auto-approve
+
+terraform destroy -auto-approve
+
+terraform apply -target=aws_s3_bucket.terraform_state -auto-approve
+
+terraform apply -target=aws_dynamodb_table.terraform_locks -auto-approve
+
+terraform apply -target backend.tf
+
+# terraform apply -target="module.VPC" -auto-approve"
+
+terraform apply -target=module.VPC.aws_vpc.main -auto-approve
+
+terraform apply -target=module.VPC.aws_subnet.public -auto-approve
+
+terraform apply -target=module.VPC.aws_subnet.private -auto-approve
